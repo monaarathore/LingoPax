@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { FiSend, FiSliders, FiBriefcase, FiPhoneOff } from 'react-icons/fi';
 import styled from 'styled-components';
 import axios from 'axios'; 

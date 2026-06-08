@@ -141,7 +141,7 @@ const MirrorLab = () => {
     }
   };
 
-  useEffect(() => {
+useEffect(() => {
     if (isCamActive && videoRef.current && streamRef.current) {
       videoRef.current.srcObject = streamRef.current;
       
@@ -151,8 +151,7 @@ const MirrorLab = () => {
     }
 
     return () => stopLoop();
-  }, [isCamActive, mockMode]);
-
+  }, [isCamActive, mockMode, captureAndAnalyzeFrame, stopLoop]);
   const stopLoop = () => {
     if (intervalRef.current) clearInterval(intervalRef.current);
   };
