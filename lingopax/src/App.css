@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Plus Jakarta Sans', sans-serif; /* Matching demo fonts */
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 :root {
-  /* ─── 🔥 UPDATED: LUXURY DARK PALETTE (NO GOLD/PINK) ─── */
-  --bg: #000000;                     /* Pure Black Base */
-  --card: rgba(255, 255, 255, 0.03); /* Translucent Luxury Glass */
-  --border: rgba(244, 239, 230, 0.08); /* Minimal Muted Border */
-  --accent-orange: #C7622A;          /* Premium Orange Accent */
-  --text-main: #F4EFE6;              /* Champagne Cream Text */
-  --text-dim: #A89F91;               /* Elegant Half Gray Muted */
+  --bg: #000000;                        
+  --card: rgba(255, 255, 255, 0.03); 
+  --border: rgba(244, 239, 230, 0.08); 
+  --accent-orange: #C7622A;          
+  --text-main: #F4EFE6;              
+  --text-dim: #A89F91;               
   --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -57,7 +57,6 @@ body {
 }
 .top-logo-group { display: flex; align-items: center; }
 
-/* 🌟 EXACT DEMO LOGO FONT HALF WHITE / HALF ORANGE */
 .global-logo-text { 
   font-family: 'Plus Jakarta Sans', sans-serif; 
   font-size: 1.4rem; 
@@ -148,7 +147,6 @@ body {
 
 .nav-icons-stack { display: flex; flex-direction: column; gap: 12px; width: 100%; margin-top: 40px; }
 
-/* 🌟 CLEAN GLASS NAVIGATION LINKS (NO PINK GRADIENT) */
 .nav-link-custom  {
   position: relative; 
   display: flex; 
@@ -175,7 +173,6 @@ body {
 
 .nav-link-custom svg { color: var(--text-dim) !important; font-size: 1.25rem; transition: color 0.2s; }
 
-/* Active and Hover States -> Turns to Luxury Clean Grey or Accent Orange */
 .nav-link-custom:hover {
   background: rgba(244, 239, 230, 0.04);
   border-color: rgba(244, 239, 230, 0.08);
@@ -193,14 +190,13 @@ body {
 }
 .nav-link-custom.active svg { color: var(--accent-orange) !important; }
 
-/* ─── 🧭 TOOLTIP UNDERNEATH ICON FIX (LUXURY COMPACT) ─── */
 .premium-left-sidebar.collapsed .nav-link-custom::after {
   content: attr(data-tooltip); 
   position: absolute; 
   top: 48px; 
   left: 50%;
   transform: translateX(-50%);
-  background: #131310; /* Pure deep charcoal match */
+  background: #131310; 
   color: var(--text-main); 
   border: 1px solid var(--border);
   font-size: 0.65rem; 
@@ -280,7 +276,7 @@ body {
   flex-shrink: 0;
 }
 
-/* --- IMMERSION ROADMAP MECHANICS (CLEAN NODES) --- */
+/* --- IMMERSION ROADMAP MECHANICS --- */
 .roadmap-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
 .roadmap-sub { color: var(--text-dim); font-size: 0.85rem; font-weight: 300; }
 .badge-track { background: rgba(244,239,230,0.05); color: var(--text-main); padding: 4px 10px; border-radius: 30px; font-size: 0.7rem; border: 1px solid var(--border); }
@@ -296,7 +292,6 @@ body {
 .tree-node.completed .node-content h4 { color: var(--text-dim) !important; text-decoration: none; opacity: 0.6; }
 .tree-node.locked { opacity: 0.35; }
 
-/* Dynamic Glow Wave for Active State */
 .pulse { 
   background: var(--accent-orange) !important; 
   animation: dynamicPulseBlink 2s infinite ease-in-out;
@@ -308,7 +303,7 @@ body {
   100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(199, 98, 42, 0); }
 }
 
-/* --- ACTIVITY HUB COMPACT GRID RE-SCHEDULING --- */
+/* --- ACTIVITY HUB COMPACT GRID --- */
 .heatmap-header-main { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
 .heatmap-sub-info { color: var(--text-dim); font-size: 0.85rem; font-weight: 300; }
 .heatmap-subtext { color: var(--accent-orange); font-size: 0.88rem; font-weight: 500; }
@@ -317,7 +312,6 @@ body {
 .heat-square { width: 18px; height: 18px; background: #252525; border-radius: 4px; cursor: pointer; transition: transform 0.2s; }
 .heat-square:hover { transform: scale(1.15); z-index: 10; }
 
-/* Orange Gradient Accents Matching Your Screenshot Matrix Settings */
 .active-1 { background: #FFA07A; }
 .active-2 { background: #E9967A; }
 .active-3 { background: #CD5C5C; }
@@ -354,7 +348,6 @@ body {
 }
 .lang-card:hover { border-color: rgba(244,239,230,0.15); }
 
-/* Luxury Accent Orange Link Frame for Active State */
 .lang-card.active { 
   background: rgba(199, 98, 42, 0.08) !important; 
   border: 1px solid var(--accent-orange) !important; 
@@ -376,7 +369,6 @@ body {
   overflow: hidden;
 }
 
-/* 🌟 MIRROR LAB ANTI-CRUNCH LAYOUT MAPS */
 .mirror-lab-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -394,7 +386,6 @@ body {
 .tab-title { font-family: 'Playfair Display', serif; font-weight: 600; color: var(--text-main); margin-bottom: 20px; }
 .glass-card-container { background: var(--card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 24px; padding: 30px; min-height: 400px; }
 
-/* ─── ⚡ ANTI-CRUSH GRID CONTROLLER (COMPATIBLE MODE) ─── */
 @media (max-width: 1024px) {
   .workspace-grid, .mirror-lab-grid { 
     grid-template-columns: 1fr !important; 
@@ -408,9 +399,8 @@ body {
 }
 @media (max-width: 768px) {
   .workspace-bottom-split-row { grid-template-columns: 1fr !important; }
-
 }
-/* --- 🎙️ AI WORKSPACE MODE LOOKS (RESPONSIVE MASTER) --- */
+
 .ai-workspace-container {
   display: flex;
   flex-direction: column;
@@ -428,7 +418,6 @@ body {
   min-height: 420px;
 }
 
-/* 🔮 ORB SECTION ANIMATIONS (PREMIUM REMIX) */
 .ai-orb-card {
   display: flex;
   flex-direction: column;
@@ -449,7 +438,6 @@ body {
   min-height: 200px;
 }
 
-/* ⚡ Dynamic Glowing Orb (Turned from Dark Slaty to Premium Orange Aura) */
 .ai-pulse-orb {
   width: 140px;
   height: 140px;
@@ -494,7 +482,6 @@ body {
   100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(199, 98, 42, 0); }
 }
 
-/* MIC BUTTON ADJUSTMENT */
 .action-mic-toggle {
   display: flex;
   align-items: center;
@@ -521,30 +508,21 @@ body {
   box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
 }
 
-/* 💬 CHAT AREA UI SYSTEM (CLEAN LUXURY GLASS) */
 .ai-chat-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  height: 450px;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 24px;
-}
-
-.ai-chat-card {
-  display: flex;
-  flex-direction: column;
-  height: 450px; /* Ya jo bhi aapke card ki total fixed height hai */
-  justify-content: space-between;
   box-sizing: border-box;
 }
 
-/* 2. Messages Window - Yeh bachi hui poori space lega par input box ko push nahi karega */
 .chat-messages-stream {
-  flex: 1;            /* Bachi hui jagah automatic handle karega */
-  overflow-y: auto;   /* Scrollbar sirf iske andar aayega */
+  flex: 1;           
+  overflow-y: auto;  
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -553,12 +531,6 @@ body {
   box-sizing: border-box;
 }
 
-/* 3. Input Sticky Bar - Iska absolute/fixed hata kar layout control wapas denge */
-.chat-input-sticky {
-  position: relative; /* Kisi ke upar float nahi karega, hamesha stream ke niche normal baithega */
-  width: 100%;
-  box-sizing: border-box;
-}
 .chat-bubble-row {
   display: flex;
   gap: 12px;
@@ -583,7 +555,6 @@ body {
   flex-shrink: 0;
 }
 
-/* 💎 Bubble Styling Removed from Heavy Pink to Elegant Semi-Glass Muted Cards */
 .bubble-text-content {
   background: #0D0D0B;
   border: 1px solid var(--border);
@@ -604,11 +575,13 @@ body {
   font-weight: 500;
 }
 
-/* CHAT INPUT MATRIX SYSTEM */
 .chat-input-sticky {
   display: flex;
   gap: 12px;
   margin-top: 20px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 .chat-input-sticky input {
   flex: 1;
@@ -649,7 +622,6 @@ body {
   transform: scale(1.05);
 }
 
-/* 👥 PERSONA HORIZONTAL FLEX FILTERS (CHROME THEME LOOK) */
 .voice-filter-section-wrapper {
   display: flex;
   flex-direction: column;
@@ -672,7 +644,6 @@ body {
   padding-bottom: 8px;
 }
 
-/* Scrollbar tweaks for filters row */
 .filter-cards-flex-row::-webkit-scrollbar { height: 3px; }
 
 .filter-persona-card {
@@ -691,7 +662,6 @@ body {
   border-color: rgba(244, 239, 230, 0.15);
 }
 
-/* Luxury Active Filter Border */
 .filter-persona-card.active-filter {
   background: rgba(199, 98, 42, 0.08) !important;
   border: 1px solid var(--accent-orange) !important;
@@ -728,10 +698,10 @@ body {
   color: var(--text-dim);
   font-weight: 300;
 }
-/* ─── ⚙️ AGENT SESSION CONFIGHEADER STYLINGS ─── */
+
 .agent-configuration-header {
   padding: 14px 24px !important;
-  margin-top: 0px !important; /* Reset rigid offsets */
+  margin-top: 0px !important; 
   min-height: auto !important; 
   display: flex;
   align-items: center;
@@ -752,19 +722,11 @@ body {
   margin-bottom: 4px !important;
   color: var(--text-main) !important;
 }
-.roadmap-sub {
-  font-size: 0.85rem !important;
-  margin: 0 !important;
-  color: var(--text-dim) !important;
-  font-weight: 300;
-}
 
-/* 🧭 Sandbox Analysis feed structure setup */
 .analysis-feed {
   margin-top: 10px !important;
 }
 
-/* INTERACTIVE FILTER TRIGGER BUTTON */
 .filter-configuration-trigger-btn {
   display: flex;
   align-items: center;
@@ -787,9 +749,8 @@ body {
   border-color: #FFFFFF !important;
 }
 
-/* DYNAMIC DROPDOWN SECTIONS PANEL */
 .dynamic-filter-dropdown-panel {
-  background: #0D0D0B !important; /* Pure minimal dark fallback layer */
+  background: #0D0D0B !important; 
   backdrop-filter: blur(20px);
   border: 1px solid var(--border) !important;
   border-radius: 20px;
@@ -807,14 +768,12 @@ body {
   margin-bottom: 16px;
 }
 
-/* BEHAVIOUR SELECTION ROW GRID SYSTEM */
 .behaviour-selection-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
 }
 
-/* Clean micro glass adjustments instead of dynamic magenta pink overlays */
 .behaviour-interactive-card {
   background: rgba(255, 255, 255, 0.01);
   border: 1px solid var(--border);
@@ -833,7 +792,6 @@ body {
   background: rgba(255, 255, 255, 0.02);
 }
 
-/* Accent Orange Frame when card is selected */
 .behaviour-interactive-card.selected-card {
   border: 1px solid var(--accent-orange) !important;
   background: rgba(199, 98, 42, 0.05) !important;
@@ -901,7 +859,7 @@ body {
   padding-top: 20px;
 }
 
-/* 🧭 SANDBOX CUSTOM ELEMENTS (CLEAN CHROME LOOK) */
+/* --- SANDBOX CUSTOM ELEMENTS --- */
 .sandbox-gradient-header {
   background: var(--card) !important;
   border: 1px solid var(--border) !important;
@@ -933,7 +891,6 @@ body {
   padding-bottom: 12px;
 }
 
-/* EVALUATION ERROR ROWS CONTAINER STYLING */
 .analysis-feed-container {
   display: flex;
   flex-direction: column;
@@ -945,7 +902,7 @@ body {
   padding: 16px 20px;
   border-radius: 16px;
   border: 1px solid var(--border);
-  border-left: 4px solid #EF4444; /* Clean solid red alert clip marker */
+  border-left: 4px solid #EF4444; 
   box-shadow: var(--glass-shadow);
 }
 
@@ -980,7 +937,6 @@ body {
   line-height: 1.4;
 }
 
-/* PRACTICE TOOLS CAPSULE BUTTONS (RE-THEMED FROM PINK TO ORANGE/WHITE) */
 .sandbox-tools-vertical-stack {
   display: flex;
   flex-direction: column;
@@ -1022,7 +978,6 @@ body {
   min-height: 350px;
 }
 
-/* ─── 🌸 EXTRA RE-THEMING FALLBACK CHECKS ─── */
 .workspace-theme-header {
   background: var(--card) !important;
   border: 1px solid var(--border) !important;
@@ -1041,30 +996,25 @@ body {
   font-size: 0.85rem !important;
   margin-top: 4px !important;
   font-weight: 300;
-
 }
-/* ==========================================================================
-   MOBILE & TABLET RESPONSIVE MEDIA QUERIES (BREAKPOINTS)
-   ========================================================================== */
 
-/* Hamburger menu trigger toggle button hide by default on desktop */
+/* --- RESPONSIVE MEDIA QUERIES --- */
 .mobile-hamburger-trigger {
   display: none;
   background: transparent;
   border: none;
   cursor: pointer;
-  color: var(--text-main); /* ⚡ Fixed: Champagne cream color instead of slate black */
+  color: var(--text-main); 
 }
 
-/* --- MOBILE STYLING (Screens smaller than 768px) --- */
 @media screen and (max-width: 768px) {
   .mobile-hamburger-trigger {
-    display: block; /* Show hamburger button on mobile phone */
+    display: block; 
     margin-right: 12px;
   }
 
   .desktop-only-toggle, .mobile-hide-actions {
-    display: none !important; /* Extra elements hide */
+    display: none !important; 
   }
 
   .global-top-navbar {
@@ -1078,17 +1028,16 @@ body {
 
   .hero-workspace-layout {
     flex-direction: column !important;
-    padding-top: 60px !important; /* Top navbar layout protection */
+    padding-top: 60px !important; 
   }
 
-  /* ⚡ FIXED: Sidebar Mobile Drawer Template turned into Premium Glassmorphism Drawer */
   .premium-left-sidebar {
     position: fixed !important;
     top: 60px !important;
     left: 0 !important;
     height: calc(100vh - 60px) !important;
     z-index: 999 !important;
-    background: rgba(13, 13, 11, 0.95) !important; /* Deep dark velvet finish instead of white */
+    background: rgba(13, 13, 11, 0.95) !important; 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-right: 1px solid var(--border) !important;
@@ -1097,12 +1046,12 @@ body {
   }
 
   .premium-left-sidebar.collapsed {
-    transform: translateX(-100%) !important; /* Sidebar screen se bahar chip jayega */
+    transform: translateX(-100%) !important; 
     width: 240px !important;
   }
 
   .premium-left-sidebar.open {
-    transform: translateX(0) !important; /* Slide-in effect */
+    transform: translateX(0) !important; 
     width: 240px !important;
   }
 
@@ -1112,7 +1061,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5); /* Enhanced backdrop tracking contrast */
+    background: rgba(0, 0, 0, 0.5); 
     z-index: 998;
   }
 
@@ -1121,15 +1070,13 @@ body {
     width: 100% !important;
   }
 
-  /* 🌟 CORE GRID FIX: Double panels column format mein layout set honge */
   .ai-agent-main-grid {
-    grid-template-columns: 1fr !important; /* One box per row */
+    grid-template-columns: 1fr !important; 
     display: flex !important;
     flex-direction: column !important;
     gap: 16px !important;
   }
 
-  /* Workspace configuration details banner scaling */
   .agent-configuration-header {
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -1143,20 +1090,19 @@ body {
     justify-content: center;
   }
 
-  /* Elements sizing compression logic for small viewport grids */
   .camera-viewport-display, .siri-visualizer-portal-wrapper {
-    height: 200px !important; /* Prevent element cuts */
+    height: 200px !important; 
   }
 
   .chat-input-sticky input {
-    font-size: 16px !important; /* Disable iOS/Android automatic input scale zoom */
+    font-size: 16px !important; 
   }
 }
 
 .sidebar-link-text {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text-dim); /* ⚡ Fixed alignment variable mapping */
+  color: var(--text-dim); 
   white-space: nowrap;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
@@ -1165,11 +1111,10 @@ body {
   animation: smoothTabFadeIn 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Keyframe for professional layout fade and slight slide up entry */
 @keyframes smoothTabFadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px); /* Thoda niche se upar aayega */
+    transform: translateY(8px); 
   }
   to {
     opacity: 1;
@@ -1177,25 +1122,18 @@ body {
   }
 }
 
-/* ==========================================================================
-   ✨ ULTRA-SMOOTH SIDEBAR & SLIDING LINE ANIMATIONS
-   ========================================================================== */
-
-/* 1. Core layouts smooth hardware accelerated transition */
 .premium-left-sidebar {
   transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1) !important;
   will-change: width;
 }
 
-/* 2. Container viewport auto adjustments alongside sidebar shift */
 .main-viewport-content {
   transition: padding 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* 3. The Toggle Button Layout Wrapper Box */
 .modern-square-toggle {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border); /* ⚡ Fixed: Replaced black border with fine glass border */
+  border: 1px solid var(--border); 
   border-radius: 10px;
   width: 36px;
   height: 36px;
@@ -1215,38 +1153,31 @@ body {
   border-color: rgba(244, 239, 230, 0.2);
 }
 
-/* 4. ⚡ THE SLIDING INDICATOR LINE (Core styling) */
 .sliding-indicator-line {
   width: 3px;
   height: 18px;
-  background: #FFFFFF; /* ⚡ Turned into white for striking visibility on black base */
+  background: #FFFFFF; 
   border-radius: 10px;
   position: absolute;
   transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s, box-shadow 0.3s;
 }
 
-/* 5. Shifting state rules: Left/Right transform matrix filters */
 .modern-square-toggle.sidebar-is-open .sliding-indicator-line {
-  transform: translateX(-2px); /* Sidebar open hone par left shifting node */
+  transform: translateX(-2px); 
 }
 
 .modern-square-toggle.sidebar-is-collapsed .sliding-indicator-line {
-  transform: translateX(2px);  /* Sidebar collapse hone par right shifting bounce */
-  background: var(--accent-orange); /* ⚡ Orange blast feedback when collapsed! */
+  transform: translateX(2px);  
+  background: var(--accent-orange); 
   box-shadow: 0 0 10px var(--accent-orange);
 }
 
-/* Extra premium touch: adding subtle rotate feedback when active */
 .modern-square-toggle:active .sliding-indicator-line {
-  transform: scaleY(1.2); /* Press compression feedback effect */
+  transform: scaleY(1.2); 
 }
-//* ==========================================================================
-   ✨ PREMIUM TRANS-GLASS CARDS ON DARK BACKGROUND
-   ========================================================================== */
 
-/* Re-themed from Vibrant Gradient Cards to Minimal Translucent Glass Layer */
 .tab-card-vibrant {
-  background: var(--card); /* Translucent luxury glass template */
+  background: var(--card); 
   border: 1px solid var(--border);
   color: var(--text-main);
   border-radius: 24px;
@@ -1256,14 +1187,12 @@ body {
   will-change: transform;
 }
 
-/* Hover karne par card halka sa float hoga aur border highlight ho jayega */
 .tab-card-vibrant:hover {
   transform: translateY(-4px);
   border-color: rgba(244, 239, 230, 0.15);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* For secondary cards (Clean subtle border with no colorful neon stripes) */
 .tab-card-light {
   background: rgba(255, 255, 255, 0.01);
   border: 1px solid var(--border);
@@ -1273,7 +1202,6 @@ body {
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Hover effect rules: turns to fine line orange configuration matrix */
 .tab-card-light:hover {
   transform: translateY(-4px);
   background: rgba(199, 98, 42, 0.02);
