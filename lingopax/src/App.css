@@ -1008,10 +1008,26 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .mobile-hamburger-trigger {
-    display: block; 
-    margin-right: 12px;
+  
+  /* 1. Hero section ki heading ka gradient/animation hatakar pure white karna */
+  .workspace-greeting-hero h1,
+  .login-header h2,
+  .login-header h2 span {
+    background: none !important;
+    animation: none !important;
+    color: #FFFFFF !important; 
+    text-shadow: none !important;
   }
+
+  /* 2. Mobile par card float aur mouse tilt movement ko freeze karna */
+  .tab-card-vibrant:hover,
+  .tab-card-light:hover,
+  .behaviour-interactive-card:hover {
+    transform: none !important; 
+    box-shadow: var(--glass-shadow) !important; 
+    background: var(--card) !important; 
+  }
+}
 
   .desktop-only-toggle, .mobile-hide-actions {
     display: none !important; 
