@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import './Login.css';
 
 const Login = () => {
@@ -11,35 +10,39 @@ const Login = () => {
   const navigate = useNavigate();
   const { email, password } = formData;
 
-  // Handle Input Changes
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  // Submit Logic to Backend
   const onSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    loading(true);
+    setLoading(true);
 
     try {
-     
-      const res = await axios.post("https://lingopax-backend-1.onrender.com/api/auth/login", { email, password });
-      
+      // ✅ Using native fetch to avoid any axios 's is not a function' mismatch
+      const response = await fetch("https://lingopax-backend-1.onrender.com/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await response.json();
       setLoading(false);
-      
-    
-      if (res.data.token) {
-        localStorage.setItem('token', res.data.token); 
-        localStorage.setItem('user', JSON.stringify(res.data.user));
+
+      if (response.ok && data.token) {
+        localStorage.setItem('token', data.token); 
+        localStorage.setItem('user', JSON.stringify(data.user));
         
-        alert(res.data.message || "Welcome back to LingoPax! 🎉");
+        alert(data.message || "Welcome back to LingoPax! 🎉");
         navigate('/dashboard');
       } else {
-        setError('Token missing! Verification failed.');
+        setError(data.message || 'Login failed! Please check your credentials.');
       }
 
     } catch (err) {
       setLoading(false);
-      setError(err.response?.data?.message || 'Something went wrong! Server connection failed.');
+      setError('Something went wrong! Server connection failed.');
     }
   };
 
@@ -56,26 +59,12 @@ const Login = () => {
         <form className="login-form-element" onSubmit={onSubmit}>
           <div className="input-group-wrapper">
             <label>Email Address</label>
-            <input 
-              type="email" 
-              name="email" 
-              value={email} 
-              onChange={onChange} 
-              placeholder="Enter your registered email" 
-              required 
-            />
+            <input type="email" name="email" value={email} onChange={onChange} placeholder="Enter your registered email" required />
           </div>
 
           <div className="input-group-wrapper">
             <label>Password</label>
-            <input 
-              type="password" 
-              name="password" 
-              value={password} 
-              onChange={onChange} 
-              placeholder="••••••••" 
-              required 
-            />
+            <input type="password" name="password" value={password} onChange={onChange} placeholder="••••••••" required />
           </div>
 
           <button type="submit" className="login-submit-btn" disabled={loading}>
