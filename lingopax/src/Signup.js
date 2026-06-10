@@ -20,7 +20,7 @@ const Signup = () => {
 
     try {
       // ✅ Pure native fetch request without any external axios issues
-      const response = await fetch("https://lingopax-backend-1.onrender.com/api/auth/register", {
+      const response = await fetch("https://lingopax-backend-1.onrender.com/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
