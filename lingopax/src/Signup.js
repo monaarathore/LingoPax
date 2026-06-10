@@ -20,7 +20,7 @@ const Signup = () => {
 
     try {
       // 🚀 Hitting our Backend Signup API Route
-      const res = await axios.post('https://lingopax-backend.onrender.com/api/auth/login', { name, email, password });
+      const res = await axios.post('https://lingopax-backend-1.onrender.com', { name, email, password });
       
       setLoading(false);
 
