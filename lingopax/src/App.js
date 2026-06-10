@@ -45,7 +45,6 @@ const MainDashboardLayout = () => {
   return (
     <div className="dashboard-root-container">
       
-      {/* ─── 🪟 GLOBAL TOP NAVBAR (RE-THEMED FROM ZERO) ─── */}
       <header className="global-top-navbar" style={{
         display: 'flex',
         justifyContent: 'space-between',

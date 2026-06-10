@@ -22,7 +22,7 @@ const Login = () => {
 
     try {
       // 🚀 Hitting our Backend Login API Route
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const res = await axios.post('https://lingopax-backend.onrender.com/api/auth/login', { email, password });
       
       setLoading(false);
       alert(res.data.message); // Successful Alert Box
