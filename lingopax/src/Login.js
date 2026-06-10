@@ -18,24 +18,27 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    setLoading(true);
+    loading(true);
 
     try {
-      // 🚀 Hitting our Backend Login API Route
-      const res = await axios.post('https://lingopax-backend-1.onrender.com/api', { email, password });
+     
+      const res = await axios.post("https://lingopax-backend-1.onrender.com/api/auth/login", { email, password });
       
       setLoading(false);
-      alert(res.data.message); // Successful Alert Box
+      
+    
+      if (res.data.token) {
+        localStorage.setItem('token', res.data.token); 
+        localStorage.setItem('user', JSON.stringify(res.data.user));
+        
+        alert(res.data.message || "Welcome back to LingoPax! 🎉");
+        navigate('/dashboard');
+      } else {
+        setError('Token missing! Verification failed.');
+      }
 
-    // Is exact line ko apne Login.js ke try block me 'navigate('/dashboard')' ke theek upar update kar do:
-// 🚀 Res.data se token nikal kar localStorage me set karna
-localStorage.setItem('token', res.data.token); 
-localStorage.setItem('user', JSON.stringify(res.data.user));
-
-navigate('/dashboard');
     } catch (err) {
       setLoading(false);
-      // Agar password wrong hai ya email match nahi hua toh error return hoga
       setError(err.response?.data?.message || 'Something went wrong! Server connection failed.');
     }
   };

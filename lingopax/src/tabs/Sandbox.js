@@ -65,7 +65,7 @@ const Sandbox = () => {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.post(
-        'http://localhost:5000/api/sandbox/evaluate-logic',
+        'https://lingopax-backend-1.onrender.com/api/sandbox/evaluate-logic',
         { codePrompt: inputLine.trim(), language: selectedLanguage },
         { headers: { 'x-auth-token': token } }
       );

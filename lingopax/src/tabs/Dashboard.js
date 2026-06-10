@@ -13,7 +13,7 @@ const Workspace = () => {
     const fetchDashboardLiveSpecs = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/auth/dashboard-data', {
+        const res = await axios.get('https://lingopax-backend-1.onrender.com/api/auth/dashboard-data', {
           headers: { 'x-auth-token': token }
         });
         

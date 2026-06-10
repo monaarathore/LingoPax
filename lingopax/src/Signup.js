@@ -16,28 +16,24 @@ const Signup = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    setLoading(true);
+    loading(true);
 
     try {
-      // 🚀 Hitting our Backend Signup API Route
-      const res = await axios.post('https://lingopax-backend-1.onrender.com/api', { name, email, password });
+      
+      const res = await axios.post("https://lingopax-backend-1.onrender.com/api/auth/register", { name, email, password });
       
       setLoading(false);
 
-      // ==========================================================================
-      // ⚡ STEP 1: USE THE TOKEN RIGHT HERE FOR AUTO-LOGIN
-      // ==========================================================================
-      // Backend se jo token aur user data aaya h, use local storage me store kar rahe hain
       if (res.data.token) {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('user', JSON.stringify(res.data.user));
         
         alert("Account created successfully! Welcome to LingoPax 🎉");
         
-        // Account bante hi direct authenticated Dashboard ke andar entry!
+      
         navigate('/dashboard');
       } else {
-        // Fallback: Agar kisi wajah se token na aaye toh login page par bhej dega
+       
         navigate('/login');
       }
 

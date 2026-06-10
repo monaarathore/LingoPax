@@ -99,7 +99,7 @@ const MirrorLab = () => {
       const token = localStorage.getItem('token');
 
       // Post dynamic vision assets over to server engine
-      const res = await axios.post('http://localhost:5000/api/video/analyze-frame', 
+      const res = await axios.post('https://lingopax-backend-1.onrender.com/api/video/analyze-frame', 
         { imageBase64: base64Image, targetProfile: mockMode },
         { headers: { 'x-auth-token': token } }
       );
