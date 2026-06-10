@@ -10,15 +10,16 @@ const Signup = () => {
   const navigate = useNavigate();
   const { name, email, password } = formData;
 
+  // Handle input values dynamically
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    loading(true);
+    setLoading(true);
 
     try {
-      // ✅ Using native fetch here as well to fix the freeze error
+      // ✅ Pure native fetch request without any external axios issues
       const response = await fetch("https://lingopax-backend-1.onrender.com/api/auth/register", {
         method: "POST",
         headers: {
@@ -31,18 +32,22 @@ const Signup = () => {
       setLoading(false);
 
       if (response.ok && data.token) {
+        // Save auth details to local storage
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
         
         alert("Account created successfully! Welcome to LingoPax 🎉");
+        
+        // Direct redirect to Dashboard
         navigate('/dashboard');
       } else {
-        setError(data.message || 'Signup failed! Please try again.');
+        // Show server validation errors if any (like email already exists)
+        setError(data.message || 'Signup failed! Please check your details and try again.');
       }
 
     } catch (err) {
       setLoading(false);
-      setError('Signup failed! Server connection failed.');
+      setError('Server connection failed! Please check if backend is awake.');
     }
   };
 
@@ -56,20 +61,42 @@ const Signup = () => {
 
         {error && <div className="error-alert-badge">⚠️ {error}</div>}
 
+        {/* ✅ Strict form submission connected directly to onSubmit */}
         <form className="signup-form-element" onSubmit={onSubmit}>
           <div className="input-group-wrapper">
             <label>Full Name</label>
-            <input type="text" name="name" value={name} onChange={onChange} placeholder="Enter your name" required />
+            <input 
+              type="text" 
+              name="name" 
+              value={name} 
+              onChange={onChange} 
+              placeholder="Enter your name" 
+              required 
+            />
           </div>
 
           <div className="input-group-wrapper">
             <label>Email Address</label>
-            <input type="email" name="email" value={email} onChange={onChange} placeholder="Enter your email" required />
+            <input 
+              type="email" 
+              name="email" 
+              value={email} 
+              onChange={onChange} 
+              placeholder="Enter your email" 
+              required 
+            />
           </div>
 
           <div className="input-group-wrapper">
             <label>Password</label>
-            <input type="password" name="password" value={password} onChange={onChange} placeholder="Create a strong password" required />
+            <input 
+              type="password" 
+              name="password" 
+              value={password} 
+              onChange={onChange} 
+              placeholder="Create a strong password" 
+              required 
+            />
           </div>
 
           <button type="submit" className="signup-submit-btn" disabled={loading}>
